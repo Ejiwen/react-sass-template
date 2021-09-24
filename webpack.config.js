@@ -1,11 +1,11 @@
-var path = require('path');
-var SRC_DIR = path.join(__dirname, '/client/src');
+var path = require("path");
+var SRC_DIR = path.join(__dirname, "/client/src");
 
 module.exports = {
   entry: `${SRC_DIR}/index.js`,
   output: {
-    filename: 'bundle.js',
-    path: path.join(__dirname, 'public')
+    filename: "bundle.js",
+    path: path.join(__dirname, "public"),
   },
   module: {
     rules: [
@@ -15,13 +15,14 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: [
-              "@babel/preset-env",
-              "@babel/preset-react"
-            ]
-          }
-        }
-      }
-    ]
-  }
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
+        },
+      },
+      {
+        test: /\.(scss|css)$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+    ],
+  },
 };
