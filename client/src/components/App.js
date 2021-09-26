@@ -1,9 +1,10 @@
 import React from "react";
-import Layout from "./Layout";
+import Layout from "./layouts/Layout";
+import AddTask from "./AddTask.js";
 const App = () => {
   return (
     <Layout>
-      <p>You clicked times</p>
+      <AddTask />
     </Layout>
   );
 };
