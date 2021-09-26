@@ -12,6 +12,7 @@ db.once("open", function () {
 
 const task = new mongoose.Schema({
   tach: String,
+  createdAt: { type: Date, default: Date.now },
 });
 
 const Task = mongoose.model("todo", task);

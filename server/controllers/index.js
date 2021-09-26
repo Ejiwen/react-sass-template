@@ -15,4 +15,15 @@ module.exports = {
       }
     });
   },
+
+  removeTask: function (req, res) {
+    const { id } = req.body;
+    models.removeTask(id, (err, msg) => {
+      if (err) {
+        console.log("something wrong happen ...");
+      } else {
+        res.send(msg);
+      }
+    });
+  },
 };

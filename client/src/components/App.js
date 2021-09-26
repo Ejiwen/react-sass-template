@@ -18,6 +18,10 @@ const App = () => {
     getTasks();
   };
 
+  const deleteTask = (taskId) => {
+    axios.post("/remove", { id: taskId }).then((res) => console.log(res.data));
+  };
+
   const getTasks = () => {
     axios.get("/tasks").then((res) => setTasks(res.data));
   };
@@ -25,7 +29,7 @@ const App = () => {
   return (
     <Layout>
       <AddTask saveTask={saveTask} />
-      <Tasks tasks={tasks} />
+      <Tasks tasks={tasks} deleteTask={deleteTask} />
     </Layout>
   );
 };

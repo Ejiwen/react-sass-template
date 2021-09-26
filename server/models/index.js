@@ -21,4 +21,14 @@ module.exports = {
       }
     });
   },
+
+  removeTask: function (id, callback) {
+    bd.todo.deleteOne({ _id: id }, (err) => {
+      if (err) {
+        console.log("error Happened");
+      } else {
+        callback(null, "deleted it successfully ... !");
+      }
+    });
+  },
 };
