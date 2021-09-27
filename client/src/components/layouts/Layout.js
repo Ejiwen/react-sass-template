@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
     <div>
       <h1>Hello From Here</h1>
       {children}
-      <h3>Bay !!!</h3>
+      <h3 id="footer">Bay !!!</h3>
     </div>
   );
 };

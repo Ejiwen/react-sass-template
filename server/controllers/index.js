@@ -26,4 +26,15 @@ module.exports = {
       }
     });
   },
+
+  editTask: function (req, res) {
+    const { id, taskup } = req.body;
+    models.editTask(id, taskup, (err, msg) => {
+      if (err) {
+        console.log("something wrong happen ...");
+      } else {
+        res.send(msg);
+      }
+    });
+  },
 };

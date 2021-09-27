@@ -14,6 +14,8 @@ app.post("/task", controllers.addTask);
 
 app.post("/remove", controllers.removeTask);
 
+app.post("/edit", controllers.editTask);
+
 app.listen(3000, () =>
   console.log("SERVER IS LISTENING NOW AT PORT 3000... !!!")
 );

@@ -22,6 +22,12 @@ const App = () => {
     axios.post("/remove", { id: taskId }).then((res) => console.log(res.data));
   };
 
+  const editTask = (id, taskup) => {
+    axios
+      .post("/edit", { id: id, taskup: taskup })
+      .then((res) => console.log(res.data));
+  };
+
   const getTasks = () => {
     axios.get("/tasks").then((res) => setTasks(res.data));
   };
@@ -29,7 +35,7 @@ const App = () => {
   return (
     <Layout>
       <AddTask saveTask={saveTask} />
-      <Tasks tasks={tasks} deleteTask={deleteTask} />
+      <Tasks tasks={tasks} deleteTask={deleteTask} editTask={editTask} />
     </Layout>
   );
 };

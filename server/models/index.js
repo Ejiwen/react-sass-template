@@ -31,4 +31,14 @@ module.exports = {
       }
     });
   },
+
+  editTask: function (id, taskup, callback) {
+    bd.todo.updateOne({ _id: id }, { tach: taskup }, (err) => {
+      if (err) {
+        console.log("error Happened");
+      } else {
+        callback(null, "edited it successfully ... !");
+      }
+    });
+  },
 };
