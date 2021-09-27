@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Tasks = ({ tasks, deleteTask, editTask }) => {
+const Tasks = ({ tasks, obj: { deleteTask, editTask } }) => {
   const [taskup, setTaskup] = useState("");
   const deleteIt = (e) => {
     var id = e.target.attributes.getNamedItem("data-id").value;
@@ -17,11 +17,6 @@ const Tasks = ({ tasks, deleteTask, editTask }) => {
       let val = document.getElementById("editItem").value;
       editTask(id, val);
     });
-
-    /*
-    onChange={() => setTaskup(e.target.value)}
-    onClick={() => editTask(taskup)}
-    */
   };
 
   return (

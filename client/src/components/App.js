@@ -32,10 +32,15 @@ const App = () => {
     axios.get("/tasks").then((res) => setTasks(res.data));
   };
 
+  const obj = {
+    deleteTask,
+    editTask,
+  };
+
   return (
     <Layout>
       <AddTask saveTask={saveTask} />
-      <Tasks tasks={tasks} deleteTask={deleteTask} editTask={editTask} />
+      <Tasks tasks={tasks} obj={obj} />
     </Layout>
   );
 };
